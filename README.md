@@ -72,5 +72,5 @@ This project is built using:
 
 ---
 <div align="center">
-  <sub>Created for the Pinokio Community</sub>
+  <sub>Created with ❤️ by Shinshekai for the Pinokio Community</sub>
 </div>
