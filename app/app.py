@@ -472,6 +472,7 @@ with gr.Blocks(title="GLM-Image", css=css) as demo:
                 ## Open Source Licenses
                 This software uses the following third-party open-source components:
                 
+                *   **GLM-Image** (MIT / Apache 2.0 Components): [Hugging Face](https://huggingface.co/zai-org/GLM-Image)
                 *   **Gradio** (Apache 2.0): [GitHub](https://github.com/gradio-app/gradio)
                 *   **Diffusers** (Apache 2.0): [GitHub](https://github.com/huggingface/diffusers)
                 *   **Transformers** (Apache 2.0): [GitHub](https://github.com/huggingface/transformers)
