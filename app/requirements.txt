@@ -1,0 +1,11 @@
+gradio
+devicetorch
+pillow
+numpy
+sentencepiece
+protobuf
+accelerate
+safetensors
+huggingface_hub
+git+https://github.com/huggingface/transformers.git
+git+https://github.com/huggingface/diffusers.git

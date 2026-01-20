@@ -1,0 +1,8 @@
+{
+  "title": "GLM-Image",
+  "description": "Image generation using zai-org/GLM-Image with Gradio UI. Supports text-to-image and image-to-image generation.",
+  "icon": "icon.png",
+  "gpu": [
+    "nvidia"
+  ]
+}
