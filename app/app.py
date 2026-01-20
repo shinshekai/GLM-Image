@@ -461,4 +461,27 @@ with gr.Blocks(title="GLM-Image", css=css) as demo:
                 outputs=[i2i_output, i2i_seed_output, i2i_path_output]
             )
 
+        # About Tab
+        with gr.TabItem("About"):
+            gr.Markdown(
+                """
+                # ℹ️ About GLM-Image
+                
+                This application is a user interface for the **GLM-Image** generation model.
+                
+                ## Open Source Licenses
+                This software uses the following third-party open-source components:
+                
+                *   **Gradio** (Apache 2.0): [GitHub](https://github.com/gradio-app/gradio)
+                *   **Diffusers** (Apache 2.0): [GitHub](https://github.com/huggingface/diffusers)
+                *   **Transformers** (Apache 2.0): [GitHub](https://github.com/huggingface/transformers)
+                *   **Hugging Face Hub** (Apache 2.0): [GitHub](https://github.com/huggingface/huggingface_hub)
+                *   **PyTorch** (BSD-style): [Website](https://pytorch.org/)
+                *   **NumPy** (BSD): [Website](https://numpy.org/)
+                *   **Pillow** (HPND): [GitHub](https://github.com/python-pillow/Pillow)
+                
+                Please refer to their respective repositories for full license text.
+                """
+            )
+
 demo.launch(theme=gr.themes.Base(), server_name="127.0.0.1")
