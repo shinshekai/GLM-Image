@@ -1,70 +1,76 @@
-# GLM-Image Pinokio App
+# GLM-Image
 
-Generate images using the [zai-org/GLM-Image](https://huggingface.co/zai-org/GLM-Image) model with a Gradio web interface.
+<div align="center">
+  <img src="icon.png" width="128" height="128" alt="GLM-Image Icon" />
+  <h1>GLM-Image for Pinokio</h1>
+  <p>
+    <strong>A high-quality, professional-grade image generation UI powered by <a href="https://huggingface.co/zai-org/GLM-Image">GLM-Image</a>.</strong>
+  </p>
+  <p>
+    Run it locally with one click.
+  </p>
+</div>
 
-## Features
+---
 
-- **Text-to-Image**: Generate images from text descriptions
-- **Image-to-Image**: Edit images with text prompts (style transfer, background replacement, etc.)
-- Auto-saves generated images to `output/` folder
-- Adjustable parameters: dimensions, inference steps, guidance scale, seed
+## 🚀 About
 
-## Requirements
+This application brings the power of **GLM-Image** to your desktop. GLM-Image is an open-source image generation model capable of producing stunning, high-resolution visuals from text prompts or existing images.
 
-- CUDA-capable GPU with 16GB+ VRAM (recommended)
-- The model (~30-40GB) will be downloaded on first use
+Built for **Pinokio**, this app offers a fully-featured **Gradio** interface that handles model downloading, environment setup, and inference automatically.
 
-## Usage
+## ✨ Features
 
-1. Click **Install** to set up dependencies
-2. Click **Start** to launch the web UI
-3. Open the Web UI link when it appears
+*   **🎨 Text-to-Image Generation**: Create detailed, high-resolution (up to 2048x2048) images from simple text descriptions.
+*   **🖼️ Image-to-Image Editing**: Transform existing images using text prompts. Change styles, backgrounds, or details easily.
+*   **🎛️ Advanced Controls**: Full control over generation parameters:
+    *   **Resolution**: Adjustable width and height (up to 2K).
+    *   **Quality**: Tune `Inference Steps` and `Guidance Scale`.
+    *   **Seed Control**: Randomize or lock seeds for reproducible results.
+*   **💾 Auto-Saving**: All generated images are automatically saved to the `output/` directory with timestamps.
+*   **🧹 Disk Space Optimizer**: Includes a built-in "Save Disk Space" tool to deduplicate redundant library files, saving gigabytes of storage.
 
-### Text-to-Image
+## 🛠️ System Requirements
 
-1. Enter a detailed prompt describing your desired image
-2. Adjust width, height, steps, and guidance scale
-3. Click **Generate**
+*   **OS**: Windows, Linux, or macOS
+*   **GPU**: NVIDIA GPU with **16GB+ VRAM** recommended (The model is large ~33GB).
+*   **Storage**: At least **60GB** of free disk space (for model weights and environment).
 
-### Image-to-Image
+## 📦 How to Run
 
-1. Upload an input image
-2. Describe the modifications (e.g., "Replace the background with a beach")
-3. Click **Generate**
+### Option 1: One-Click Install (Pinokio)
 
-## API Usage
+1.  Download and install [Pinokio](https://pinokio.computer/).
+2.  Navigate to the **Discover** page or paste this repository URL into the Pinokio browser:
+    ```
+    https://github.com/shinshekai/GLM-Image
+    ```
+3.  Click **Install**.
+4.  Once installed, click **Start**.
 
-### Python
+### Option 2: Manual Update / Reset
 
-```python
-from diffusers.pipelines.glm_image import GlmImagePipeline
-import torch
+*   **Update**: If a new version is released, click "Update" in the dashboard.
+*   **Reset**: If things break, use the "Reset" button to reinstall the environment (this won't delete your `output/` images).
+*   **Save Space**: Click "Save Disk Space" in the dashboard menu to optimize storage usage.
 
-pipe = GlmImagePipeline.from_pretrained(
-    "zai-org/GLM-Image",
-    torch_dtype=torch.bfloat16,
-    device_map="cuda"
-)
+## ⚖️ License
 
-# Text-to-Image
-image = pipe(
-    prompt="A cute robot in a garden",
-    height=1024,
-    width=1024,
-    num_inference_steps=50,
-    guidance_scale=1.5,
-).images[0]
-image.save("output.png")
-```
+**Software License**: This application logic (UI and launcher scripts) is licensed under the terms found in the `LICENSE` file.
 
-### cURL (when server is running)
+**Model License**: The **GLM-Image** model weights are released by **Zhipu AI (zai-org)** under the **MIT License**.
+*   **Note**: The tokenizer and specific weights derived from `X-Omni-En` are subject to **Apache 2.0**.
+*   Please verify your usage complies with the model's official license at [Hugging Face](https://huggingface.co/zai-org/GLM-Image).
 
-```bash
-curl -X POST http://localhost:7860/api/predict \
-  -H "Content-Type: application/json" \
-  -d '{"data": ["A cute robot in a garden", 42, true, 1024, 1024, 50, 1.5]}'
-```
+## 🤝 Attribution
 
-## License
+This project is built using:
+*   [GLM-Image](https://huggingface.co/zai-org/GLM-Image)
+*   [Gradio](https://gradio.app/)
+*   [Diffusers](https://github.com/huggingface/diffusers)
+*   [PyTorch](https://pytorch.org/)
 
-This app uses the GLM-Image model. Please refer to the [model page](https://huggingface.co/zai-org/GLM-Image) for license information.
+---
+<div align="center">
+  <sub>Created for the Pinokio Community</sub>
+</div>
